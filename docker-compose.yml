@@ -54,6 +54,48 @@ services:
       - "8081:8081"
     entrypoint: [ 'yarn' , 'srd:dev']
 
+  awsrd:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./source/awsrd/README.md:/var/www/html/srd/README.md
+      - ./source/awsrd/e2:/var/www/html/srd/e2
+      - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
+      - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
+      - ./vuepress2_template/awsrd_config.js:/var/www/html/srd/.vuepress/srd_config.js
+      - ./vuepress2_template/awsrd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
+      - ./builds/awsrd/public:/var/www/html/srd/.vuepress/dist
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    entrypoint: [ 'yarn' , 'srd:dev']
+
+  drd2srd:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./source/drd2srd/README.md:/var/www/html/srd/README.md
+      - ./source/drd2srd/zakladni-prirucka:/var/www/html/srd/zakladni-prirucka
+      - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
+      - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
+      - ./vuepress2_template/drd2srd_config.js:/var/www/html/srd/.vuepress/srd_config.js
+      - ./vuepress2_template/drd2srd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
+      - ./builds/drd2srd/public:/var/www/html/srd/.vuepress/dist
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    entrypoint: [ 'yarn' , 'srd:dev']
+
   preparedata:
     image: srd-node
     build:
