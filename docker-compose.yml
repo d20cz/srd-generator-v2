@@ -96,6 +96,27 @@ services:
       - "8081:8081"
     entrypoint: [ 'yarn' , 'srd:dev']
 
+  srd:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./source/srd/README.md:/var/www/html/srd/README.md
+      - ./source/srd/faq:/var/www/html/srd/faq
+      - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
+      - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
+      - ./vuepress2_template/srd_config.js:/var/www/html/srd/.vuepress/srd_config.js
+      - ./vuepress2_template/srd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
+      - ./builds/srd/public:/var/www/html/srd/.vuepress/dist
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    entrypoint: [ 'yarn' , 'srd:dev']
+
   preparedata:
     image: srd-node
     build:
@@ -109,7 +130,7 @@ services:
       - ./source_raw:/var/www/html/source_raw
       - ./source:/var/www/html/source
       - ./tools:/var/www/html/tools
-    entrypoint: [ './preparedata.sh',]
+    entrypoint: [ './preparedata.sh']
 
   pack:
     image: srd-node
@@ -119,7 +140,7 @@ services:
     volumes:
       - ./builds:/var/www/html/builds
       - ./pack.sh:/var/www/html/pack.sh
-    entrypoint: [ './pack.sh',]
+    entrypoint: [ './pack.sh']
 
   u_yarn:
     image: srd-node

@@ -22,6 +22,9 @@ dev-awsrd: ## dev server awsrd
 dev-drd2srd: ## dev server drd2srd
 	docker-compose up drd2srd
 
+dev-srd: ## dev server srd
+	docker-compose up srd
+
 build-fatesrd: ## build fatesrd
 	docker-compose run --rm --entrypoint "yarn srd:build" fatesrd
 
@@ -34,17 +37,23 @@ build-awsrd: ## build awsrd
 build-drd2srd: ## build drd2srd
 	docker-compose run --rm --entrypoint "yarn srd:build" drd2srd
 
+build-srd: ## build srd
+	docker-compose run --rm --entrypoint "yarn srd:build" srd
+
 pack-dnd5esrd: ## Pack dnd5esrd
 	docker-compose run --rm pack dnd5esrd
 
 pack-fatesrd: ## Pack fatesrd
 	docker-compose run --rm pack fatesrd
 
-pack-awsrd: ## Pack fatesrd
+pack-awsrd: ## Pack awsrd
 	docker-compose run --rm pack awsrd
 
-pack-drd2srd: ## Pack fatesrd
+pack-drd2srd: ## Pack drd2srd
 	docker-compose run --rm pack drd2srd
+
+pack-srd: ## Pack srd
+	docker-compose run --rm pack srd
 
 build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd ## build all
 

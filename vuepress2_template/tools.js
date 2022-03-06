@@ -6,6 +6,7 @@ module.exports = {
         return {
             text: name,
             collapsible: false,
+            //link: "/" + dirName + "/",
             children: this.expandBookPages(dirName, files)
         }
     }
