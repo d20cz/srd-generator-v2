@@ -1,0 +1,7 @@
+node_modules
+source_raw/*
+source/*
+builds/*
+vuepress2_template/.vuepress/.cache
+vuepress2_template/.vuepress/.temp
+.idea

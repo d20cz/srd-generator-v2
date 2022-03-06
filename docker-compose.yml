@@ -1,0 +1,89 @@
+version: '3'
+
+services:
+  fatesrd:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./source/fatesrd/README.md:/var/www/html/srd/README.md
+      - ./source/fatesrd/dfa:/var/www/html/srd/dfa
+      - ./source/fatesrd/fae:/var/www/html/srd/fae
+      - ./source/fatesrd/fate-core-system:/var/www/html/srd/fate-core-system
+      - ./source/fatesrd/fate-prevodni-prirucka:/var/www/html/srd/fate-prevodni-prirucka
+      - ./source/fatesrd/fate-star-wars:/var/www/html/srd/fate-star-wars
+      - ./source/fatesrd/fate-system-toolkit:/var/www/html/srd/fate-system-toolkit
+      - ./source/fatesrd/images:/var/www/html/srd/images
+      - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
+      - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
+      - ./vuepress2_template/fatesrd_config.js:/var/www/html/srd/.vuepress/srd_config.js
+      - ./vuepress2_template/fatesrd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
+      - ./builds/fatesrd/public:/var/www/html/srd/.vuepress/dist
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    entrypoint: [ 'yarn' , 'srd:dev']
+
+  dnd5esrd:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./source/dnd5esrd/README.md:/var/www/html/srd/README.md
+      - ./source/dnd5esrd/bestiar:/var/www/html/srd/bestiar
+      - ./source/dnd5esrd/prirucka-hrace:/var/www/html/srd/prirucka-hrace
+      - ./source/dnd5esrd/pruvodce-pana-jeskyne:/var/www/html/srd/pruvodce-pana-jeskyne
+      - ./source/dnd5esrd/jeskyne-a-draci:/var/www/html/srd/jeskyne-a-draci
+      - ./source/dnd5esrd/grimoar:/var/www/html/srd/grimoar
+      - ./source/dnd5esrd/soupis:/var/www/html/srd/soupis
+      - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
+      - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
+      - ./vuepress2_template/dnd5esrd_config.js:/var/www/html/srd/.vuepress/srd_config.js
+      - ./vuepress2_template/dnd5esrd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
+      - ./builds/dnd5esrd/public:/var/www/html/srd/.vuepress/dist
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    entrypoint: [ 'yarn' , 'srd:dev']
+
+  preparedata:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./preparedata.sh:/var/www/html/preparedata.sh
+      - ./source_raw:/var/www/html/source_raw
+      - ./source:/var/www/html/source
+      - ./tools:/var/www/html/tools
+    entrypoint: [ './preparedata.sh',]
+
+  pack:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./builds:/var/www/html/builds
+      - ./pack.sh:/var/www/html/pack.sh
+    entrypoint: [ './pack.sh',]
+
+  u_yarn:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - .:/var/www/html
+    entrypoint: ['yarn']

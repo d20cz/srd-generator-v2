@@ -1,0 +1,27 @@
+:root {
+    --c-brand: #1b75bc;
+    --c-brand-light: #a6daff;
+
+    --card-bg-color: rgba(0, 0, 0, 0.02);
+    --card-border-color: #a6daff;
+    --card-red-border-color: #ff8282;
+    --card-blue-border-color: #0686d9;
+    --card-green-border-color: #77e047;
+}
+
+html.dark {
+    --c-brand: #3a9bde;
+    --c-brand-light: #99cef1;
+
+    --card-bg-color: rgba(0, 0, 0, 0.2);
+    --card-border-color: #3a9bde;
+
+    --card-red-border-color: #d24949;
+    --card-blue-border-color: #2690c7;
+    --card-green-border-color: #4b8f2f;
+}
+
+.search-box {
+    --search-input-width: 14rem;
+    --search-result-width: 30rem;
+}
