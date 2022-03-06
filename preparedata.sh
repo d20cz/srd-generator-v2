@@ -66,19 +66,3 @@ find source/ -type f -name "*.md" \
 
 
 yarn source:generator
-exit 0
-
-cat source/dnd5esrd/pruvodce-pana-jeskyne/7-kapitola-a.md  \
-    source/dnd5esrd/pruvodce-pana-jeskyne/7-kapitola-b.md  \
-    >> source/dnd5esrd/pruvodce-pana-jeskyne/7-kapitola.md
-rm source/dnd5esrd/pruvodce-pana-jeskyne/7-kapitola-a.md source/dnd5esrd/pruvodce-pana-jeskyne/7-kapitola-b.md
-
-cat source/dnd5esrd/prirucka-hrace/3-kapitola-a.md  \
-    source/dnd5esrd/prirucka-hrace/3-kapitola-b.md  \
-    >> source/dnd5esrd/prirucka-hrace/3-kapitola.md
-rm source/dnd5esrd/prirucka-hrace/3-kapitola-a.md source/dnd5esrd/prirucka-hrace/3-kapitola-b.md
-
-cat source/dnd5esrd/prirucka-hrace/11-kapitola-a.md  \
-    source/dnd5esrd/prirucka-hrace/11-kapitola-b.md  \
-    >> source/dnd5esrd/prirucka-hrace/11-kapitola.md
-rm source/dnd5esrd/prirucka-hrace/11-kapitola-a.md source/dnd5esrd/prirucka-hrace/11-kapitola-b.md
