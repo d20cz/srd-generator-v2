@@ -1,145 +1,124 @@
 const tools = require('./tools');
 
+let books = [
+    {
+        text: 'Příručka hráče',
+        link: '/prirucka-hrace/predmluva',
+        activeMatch: '/prirucka-hrace/',
+    },
+    {
+        text: 'Průvodce pána jeskyně',
+        link: '/pruvodce-pana-jeskyne/uvod',
+        activeMatch: '/pruvodce-pana-jeskyne/',
+    },
+    {
+        text: 'Bestiář',
+        link: '/bestiar/uvod',
+        activeMatch: '/bestiar/',
+    },
+    {
+        text: 'Jeskyne a draci',
+        link: '/jeskyne-a-draci/0-uvod',
+        activeMatch: '/jeskyne-a-draci/',
+    },
+];
+let grimoars = [
+    {
+        text: 'Abecední',
+        link: '/grimoar/grimoar-jmen',
+        activeMatch: '/grimoar/grimoar-jmen',
+    },
+    {
+        text: 'Moci',
+        link: '/grimoar/grimoar-moci',
+        activeMatch: '/grimoar/grimoar-moci',
+    },
+    {
+        text: 'Magických škol',
+        link: '/grimoar/grimoar-skol',
+        activeMatch: '/grimoar/grimoar-skol',
+    },
+];
+let sumaryClasses = [
+    {
+        text: 'Barbar',
+        link: '/soupis/barbar',
+        activeMatch: '/soupis/barbar',
+    },
+    {
+        text: 'Bard',
+        link: '/soupis/bard',
+        activeMatch: '/soupis/bard',
+    },
+    {
+        text: 'Bojovník',
+        link: '/soupis/bojovnik',
+        activeMatch: '/soupis/bojovnik',
+    },
+    {
+        text: 'Čaroděj',
+        link: '/soupis/carodej',
+        activeMatch: '/soupis/carodej',
+    },
+    {
+        text: 'Černokněžník',
+        link: '/soupis/cernokneznik',
+        activeMatch: '/soupis/cernokneznik',
+    },
+    {
+        text: 'Druid',
+        link: '/soupis/druid',
+        activeMatch: '/soupis/druid',
+    },
+    {
+        text: 'Hraničář',
+        link: '/soupis/hranicar',
+        activeMatch: '/soupis/hranicar',
+    },
+    {
+        text: 'Klerik',
+        link: '/soupis/klerik',
+        activeMatch: '/soupis/klerik',
+    },
+    {
+        text: 'Kouzelník',
+        link: '/soupis/kouzelnik',
+        activeMatch: '/soupis/kouzelnik',
+    },
+    {
+        text: 'Mnich',
+        link: '/soupis/mnich',
+        activeMatch: '/soupis/mnich',
+    },
+    {
+        text: 'Paladin',
+        link: '/soupis/paladin',
+        activeMatch: '/soupis/paladin',
+    },
+    {
+        text: 'Tulák',
+        link: '/soupis/tulak',
+        activeMatch: '/soupis/tulak',
+    },
+];
 let config = {
     title: 'Český překlad DnD 5e SRD',
     description: 'Český překlad DnD 5e SRD',
     navbar: [
         {
             text: 'Knihy',
-            children: [
-                {
-                    text: 'Příručka hráče',
-                    link: '/prirucka-hrace/predmluva',
-                    activeMatch: '/prirucka-hrace/',
-                },
-                {
-                    text: 'Průvodce pána jeskyně',
-                    link: '/pruvodce-pana-jeskyne/uvod',
-                    activeMatch: '/pruvodce-pana-jeskyne/',
-                },
-                {
-                    text: 'Bestiář',
-                    link: '/bestiar/uvod',
-                    activeMatch: '/bestiar/',
-                },
-                {
-                    text: 'Jeskyne a draci',
-                    link: '/jeskyne-a-draci/0-uvod',
-                    activeMatch: '/jeskyne-a-draci/',
-                },
-            ]
+            children: books
         },
         {
             text: 'Grimoary',
-            children: [
-                {
-                    text: 'Abecední',
-                    link: '/grimoar/grimoar-jmen',
-                    activeMatch: '/grimoar/grimoar-jmen',
-                },
-                {
-                    text: 'Moci',
-                    link: '/grimoar/grimoar-moci',
-                    activeMatch: '/grimoar/grimoar-moci',
-                },
-                {
-                    text: 'Magických škol',
-                    link: '/grimoar/grimoar-skol',
-                    activeMatch: '/grimoar/grimoar-skol',
-                },
-            ]
+            children: grimoars
         },
         {
             text: 'Soupisy povolání',
-            children: [
-                {
-                    text: 'Barbar',
-                    link: '/soupis/barbar',
-                    activeMatch: '/soupis/barbar',
-                },
-                {
-                    text: 'Bard',
-                    link: '/soupis/bard',
-                    activeMatch: '/soupis/bard',
-                },
-                {
-                    text: 'Bojovník',
-                    link: '/soupis/bojovnik',
-                    activeMatch: '/soupis/bojovnik',
-                },
-                {
-                    text: 'Čaroděj',
-                    link: '/soupis/carodej',
-                    activeMatch: '/soupis/carodej',
-                },
-                {
-                    text: 'Černokněžník',
-                    link: '/soupis/cernokneznik',
-                    activeMatch: '/soupis/cernokneznik',
-                },
-                {
-                    text: 'Druid',
-                    link: '/soupis/druid',
-                    activeMatch: '/soupis/druid',
-                },
-                {
-                    text: 'Hraničář',
-                    link: '/soupis/hranicar',
-                    activeMatch: '/soupis/hranicar',
-                },
-                {
-                    text: 'Klerik',
-                    link: '/soupis/klerik',
-                    activeMatch: '/soupis/klerik',
-                },
-                {
-                    text: 'Kouzelník',
-                    link: '/soupis/kouzelnik',
-                    activeMatch: '/soupis/kouzelnik',
-                },
-                {
-                    text: 'Mnich',
-                    link: '/soupis/mnich',
-                    activeMatch: '/soupis/mnich',
-                },
-                {
-                    text: 'Paladin',
-                    link: '/soupis/paladin',
-                    activeMatch: '/soupis/paladin',
-                },
-                {
-                    text: 'Tulák',
-                    link: '/soupis/tulak',
-                    activeMatch: '/soupis/tulak',
-                },
-            ]
+            children: sumaryClasses
         },
-        {
-            text: 'Další SRD',
-            link: 'http://srd.d20.cz/',
-            children: [
-                {
-                    text: 'Fate',
-                    link: 'http://fatesrd.d20.cz',
-                },
-                // {
-                //     text: 'DnD 5e',
-                //     link: 'http://dnd5esrd.d20.cz',
-                // },
-                {
-                    text: 'Apokalyptickej svět',
-                    link: 'http://awsrd.d20.cz',
-                },
-                {
-                    text: 'DrDII',
-                    link: 'http://drd2srd.d20.cz',
-                },
-            ]
-        },
-        {
-            text: 'd20.cz',
-            link: 'http://www.d20.cz/'
-        },
+        tools.sharedTemplateDalsiSrd('dnd5esrd'),
+        tools.sharedTemplateD20cz(),
     ],
     sidebar: {
         '/prirucka-hrace/': [
@@ -163,6 +142,7 @@ let config = {
                 'dodatek-d',
                 'dodatek-e',
             ]),
+            tools.sharedTemplateOSrd(),
         ],
         '/pruvodce-pana-jeskyne/': [
             tools.expandBook('Průvodce pána jeskyně', 'pruvodce-pana-jeskyne', [
@@ -181,6 +161,7 @@ let config = {
                 'dodatek-C',
                 'dodatek-D',
             ]),
+            tools.sharedTemplateOSrd(),
         ],
         '/jeskyne-a-draci/': [
             tools.expandBook('Jeskyne a draci', 'jeskyne-a-draci', [
@@ -200,6 +181,7 @@ let config = {
                 '13-stavy-a-nemoci',
                 'hvezdne-obory',
             ]),
+            tools.sharedTemplateOSrd(),
         ],
         '/bestiar/': [
             tools.expandBook('Bestiář', 'bestiar', [
@@ -361,127 +343,54 @@ let config = {
                 'dodatek-b',
                 'dodatek-c',
             ]),
+            tools.sharedTemplateOSrd(),
         ],
-        '/grimoar/grimoar-jmen': [ '/grimoar/grimoar-jmen'],
-        '/grimoar/grimoar-moci': [ '/grimoar/grimoar-moci'],
-        '/grimoar/grimoar-skol': [ '/grimoar/grimoar-skol'],
-        '/soupis/barbar': [ '/soupis/barbar'],
-        '/soupis/bard': [ '/soupis/bard'],
-        '/soupis/bojovnik': [ '/soupis/bojovnik'],
-        '/soupis/carodej': [ '/soupis/carodej'],
-        '/soupis/cernokneznik': [ '/soupis/cernokneznik'],
-        '/soupis/druid': [ '/soupis/druid'],
-        '/soupis/hranicar': [ '/soupis/hranicar'],
-        '/soupis/klerik': [ '/soupis/klerik'],
-        '/soupis/kouzelnik': [ '/soupis/kouzelnik'],
-        '/soupis/mnich': [ '/soupis/mnich'],
-        '/soupis/paladin': [ '/soupis/paladin'],
-        '/soupis/tulak': [ '/soupis/tulak'],
+        '/grimoar/grimoar-jmen': ['/grimoar/grimoar-jmen',
+            tools.sharedTemplateOSrd(),],
+        '/grimoar/grimoar-moci': ['/grimoar/grimoar-moci',
+            tools.sharedTemplateOSrd(),],
+        '/grimoar/grimoar-skol': ['/grimoar/grimoar-skol',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/barbar': ['/soupis/barbar',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/bard': ['/soupis/bard',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/bojovnik': ['/soupis/bojovnik',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/carodej': ['/soupis/carodej',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/cernokneznik': ['/soupis/cernokneznik',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/druid': ['/soupis/druid',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/hranicar': ['/soupis/hranicar',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/klerik': ['/soupis/klerik',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/kouzelnik': ['/soupis/kouzelnik',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/mnich': ['/soupis/mnich',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/paladin': ['/soupis/paladin',
+            tools.sharedTemplateOSrd(),],
+        '/soupis/tulak': [
+            '/soupis/tulak',
+            tools.sharedTemplateOSrd(),
+        ],
         '/': [
             {
                 text: 'Knihy',
-                children: [
-                    {
-                        text: 'Příručka hráče',
-                        link: '/prirucka-hrace/predmluva',
-                    },
-                    {
-                        text: 'Průvodce pána jeskyně',
-                        link: '/pruvodce-pana-jeskyne/uvod',
-                    },
-                    {
-                        text: 'Bestiář',
-                        link: '/bestiar/uvod',
-                    },
-                    {
-                        text: 'Jeskyne a draci',
-                        link: '/jeskyne-a-draci/0-uvod',
-                    },
-                ]
+                children: books
             },
             {
                 text: 'Grimoary',
-                children: [
-                    {
-                        text: 'Abecední',
-                        link: '/grimoar/grimoar-jmen',
-                    },
-                    {
-                        text: 'Moci',
-                        link: '/grimoar/grimoar-moci',
-                    },
-                    {
-                        text: 'Magických škol',
-                        link: '/grimoar/grimoar-skol',
-                    },
-                ]
+                children: grimoars
             },
             {
                 text: 'Soupisy povolání',
-                children: [
-                    {
-                        text: 'Barbar',
-                        link: '/soupis/barbar',
-                    },
-                    {
-                        text: 'Bard',
-                        link: '/soupis/bard',
-                    },
-                    {
-                        text: 'Bojovník',
-                        link: '/soupis/bojovnik',
-                    },
-                    {
-                        text: 'Čaroděj',
-                        link: '/soupis/carodej',
-                    },
-                    {
-                        text: 'Černokněžník',
-                        link: '/soupis/cernokneznik',
-                    },
-                    {
-                        text: 'Druid',
-                        link: '/soupis/druid',
-                    },
-                    {
-                        text: 'Hraničář',
-                        link: '/soupis/hranicar',
-                    },
-                    {
-                        text: 'Klerik',
-                        link: '/soupis/klerik',
-                    },
-                    {
-                        text: 'Kouzelník',
-                        link: '/soupis/kouzelnik',
-                    },
-                    {
-                        text: 'Mnich',
-                        link: '/soupis/mnich',
-                    },
-                    {
-                        text: 'Paladin',
-                        link: '/soupis/paladin',
-                    },
-                    {
-                        text: 'Tulák',
-                        link: '/soupis/tulak',
-                    },
-                ]
+                children: sumaryClasses
             },
-            {
-                text: 'O SRD',
-                children: [
-                    {
-                        text: 'Návod na editaci',
-                        link: 'http://srd.d20.cz/faq/editace.html'
-                    },
-                    {
-                        text: 'Přidání knihy',
-                        link: 'http://srd.d20.cz/faq/'
-                    },
-                ],
-            },
+            tools.sharedTemplateOSrd(),
         ]
     }
 

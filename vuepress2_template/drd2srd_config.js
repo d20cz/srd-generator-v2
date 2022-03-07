@@ -4,32 +4,8 @@ let config = {
     title: 'DrDII SRD',
     description: 'DrDII SRD',
     navbar: [
-        {
-            text: 'Další SRD',
-            link: 'http://srd.d20.cz/',
-            children: [
-                {
-                    text: 'Fate',
-                    link: 'http://fatesrd.d20.cz',
-                },
-                {
-                    text: 'DnD 5e',
-                    link: 'http://dnd5esrd.d20.cz',
-                },
-                {
-                    text: 'Apokalyptickej svět',
-                    link: 'http://awsrd.d20.cz',
-                },
-                // {
-                //     text: 'DrDII',
-                //     link: 'http://drd2srd.d20.cz',
-                // },
-            ]
-        },
-        {
-            text: 'd20.cz',
-            link: 'http://www.d20.cz/'
-        },
+        tools.sharedTemplateDalsiSrd('drd2srd'),
+        tools.sharedTemplateD20cz(),
     ],
     sidebar: {
         '/': [
@@ -83,19 +59,7 @@ let config = {
                     },
                 ]
             },
-            {
-                text: 'O SRD',
-                children: [
-                    {
-                        text: 'Návod na editaci',
-                        link: 'http://srd.d20.cz/faq/editace.html'
-                    },
-                    {
-                        text: 'Přidání knihy',
-                        link: 'http://srd.d20.cz/faq/'
-                    },
-                ],
-            },
+            tools.sharedTemplateOSrd(),
         ]
     }
 

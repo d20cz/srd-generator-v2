@@ -1,45 +1,22 @@
 const tools = require('./tools');
 
+let books = [
+    {
+        text: 'Apokalyptickej svět',
+        link: '/e2/1-zaklady',
+        activeMatch: '/e2/',
+    },
+];
 let config = {
     title: 'Českej překlad Apokalyptickýho světa SRD',
     description: 'Českej překlad Apokalyptickýho světa SRD',
     navbar: [
         {
             text: 'Knihy',
-            children: [
-                {
-                    text: 'Apokalyptickej svět',
-                    link: '/e2/1-zaklady',
-                    activeMatch: '/e2/',
-                },
-            ]
+            children: books
         },
-        {
-            text: 'Další SRD',
-            link: 'http://srd.d20.cz/',
-            children: [
-                {
-                    text: 'Fate',
-                    link: 'http://fatesrd.d20.cz',
-                },
-                {
-                    text: 'DnD 5e',
-                    link: 'http://dnd5esrd.d20.cz',
-                },
-                // {
-                //     text: 'Apokalyptickej svět',
-                //     link: 'http://awsrd.d20.cz',
-                // },
-                {
-                    text: 'DrDII',
-                    link: 'http://drd2srd.d20.cz',
-                },
-            ]
-        },
-        {
-            text: 'd20.cz',
-            link: 'http://www.d20.cz/'
-        },
+        tools.sharedTemplateDalsiSrd('awsrd'),
+        tools.sharedTemplateD20cz(),
     ],
     sidebar: {
         '/e2/': [
@@ -75,26 +52,9 @@ let config = {
         '/': [
             {
                 text: 'Knihy',
-                children: [
-                    {
-                        text: 'Apokalyptickej svět',
-                        link: '/e2/1-zaklady',
-                    },
-                ]
+                children: books
             },
-            {
-                text: 'O SRD',
-                children: [
-                    {
-                        text: 'Návod na editaci',
-                        link: 'http://srd.d20.cz/faq/editace.html'
-                    },
-                    {
-                        text: 'Přidání knihy',
-                        link: 'http://srd.d20.cz/faq/'
-                    },
-                ],
-            },
+            tools.sharedTemplateOSrd(),
         ]
     }
 
