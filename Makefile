@@ -26,19 +26,19 @@ dev-srd: ## dev server srd
 	docker-compose up srd
 
 build-fatesrd: ## build fatesrd
-	docker-compose run --rm --entrypoint "yarn srd:build" fatesrd
+	docker-compose run --rm --entrypoint "yarn srd:build" -e ENABLE_GOOGLE_ANALYTICS_ID=1 fatesrd
 
 build-dnd5esrd: ## build dnd5esrd
 	docker-compose run --rm --entrypoint "yarn srd:build" -e ENABLE_GOOGLE_ANALYTICS_ID=1 dnd5esrd
 
 build-awsrd: ## build awsrd
-	docker-compose run --rm --entrypoint "yarn srd:build" awsrd
+	docker-compose run --rm --entrypoint "yarn srd:build" -e ENABLE_GOOGLE_ANALYTICS_ID=1 awsrd
 
 build-drd2srd: ## build drd2srd
-	docker-compose run --rm --entrypoint "yarn srd:build" drd2srd
+	docker-compose run --rm --entrypoint "yarn srd:build" -e ENABLE_GOOGLE_ANALYTICS_ID=1 drd2srd
 
 build-srd: ## build srd
-	docker-compose run --rm --entrypoint "yarn srd:build" srd
+	docker-compose run --rm --entrypoint "yarn srd:build" -e ENABLE_GOOGLE_ANALYTICS_ID=1 srd
 
 pack-dnd5esrd: ## Pack dnd5esrd
 	docker-compose run --rm pack dnd5esrd
