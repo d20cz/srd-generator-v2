@@ -1,8 +1,11 @@
 const tools = require('./tools');
 
+const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-2E3WCNGJVG' : '';
+
 let config = {
     title: 'DrDII SRD',
     description: 'DrDII SRD',
+    googleAnalyticsId: googleAnalyticsId,
     navbar: [
         tools.sharedTemplateDalsiSrd('drd2srd'),
         tools.sharedTemplateD20cz(),

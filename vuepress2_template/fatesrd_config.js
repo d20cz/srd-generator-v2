@@ -1,5 +1,7 @@
 const tools = require('./tools');
 
+const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-YYYYYYYYYY' : '';
+
 let books = [
     {
         text: 'Základní pravidla',
@@ -30,6 +32,7 @@ let books = [
 let config = {
     title: 'Český překlad Fate SRD',
     description: 'Český překlad fate SRD',
+    googleAnalyticsId: googleAnalyticsId,
     navbar: [
         {
             text: 'Knihy',

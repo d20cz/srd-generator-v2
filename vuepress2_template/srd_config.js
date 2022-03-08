@@ -1,8 +1,11 @@
 const tools = require('./tools');
 
+const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-YYYYYYYYYY' : '';
+
 let config = {
     title: 'Vítejte na SRD Kostky!',
     description: 'Vítejte na SRD Kostky!',
+    googleAnalyticsId: googleAnalyticsId,
     navbar: [
         {
             text: 'Další SRD',

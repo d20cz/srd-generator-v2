@@ -42,6 +42,7 @@ services:
       - ./source/dnd5esrd/prirucka-hrace:/var/www/html/srd/prirucka-hrace
       - ./source/dnd5esrd/pruvodce-pana-jeskyne:/var/www/html/srd/pruvodce-pana-jeskyne
       - ./source/dnd5esrd/jeskyne-a-draci:/var/www/html/srd/jeskyne-a-draci
+      - ./source/dnd5esrd/jeskyne-a-draci-doplnky:/var/www/html/srd/jeskyne-a-draci-doplnky
       - ./source/dnd5esrd/grimoar:/var/www/html/srd/grimoar
       - ./source/dnd5esrd/soupis:/var/www/html/srd/soupis
       - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress

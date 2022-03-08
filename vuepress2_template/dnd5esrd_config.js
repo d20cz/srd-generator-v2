@@ -1,26 +1,45 @@
 const tools = require('./tools');
 
+const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-YYYYYYYYYY' : '';
+
 let books = [
     {
-        text: 'Příručka hráče',
-        link: '/prirucka-hrace/predmluva',
-        activeMatch: '/prirucka-hrace/',
-    },
-    {
-        text: 'Průvodce pána jeskyně',
-        link: '/pruvodce-pana-jeskyne/uvod',
-        activeMatch: '/pruvodce-pana-jeskyne/',
-    },
-    {
-        text: 'Bestiář',
-        link: '/bestiar/uvod',
-        activeMatch: '/bestiar/',
+        text: 'DnD 5e',
+        children: [
+            {
+                text: 'Příručka hráče',
+                link: '/prirucka-hrace/predmluva',
+                activeMatch: '/prirucka-hrace/',
+            },
+            {
+                text: 'Průvodce pána jeskyně',
+                link: '/pruvodce-pana-jeskyne/uvod',
+                activeMatch: '/pruvodce-pana-jeskyne/',
+            },
+            {
+                text: 'Bestiář',
+                link: '/bestiar/uvod',
+                activeMatch: '/bestiar/',
+            },
+        ],
     },
     {
         text: 'Jeskyne a draci',
-        link: '/jeskyne-a-draci/0-uvod',
-        activeMatch: '/jeskyne-a-draci/',
+        children: [
+            {
+                text: 'Základní kniha',
+                link: '/jeskyne-a-draci/0-uvod',
+                activeMatch: '/jeskyne-a-draci/',
+            },
+            {
+                text: 'Doplňky',
+                link: '/jeskyne-a-draci-doplnky/hvezdne-obory',
+                activeMatch: '/jeskyne-a-draci-doplnky/',
+            },
+        ],
     },
+
+
 ];
 let grimoars = [
     {
@@ -101,9 +120,11 @@ let sumaryClasses = [
         activeMatch: '/soupis/tulak',
     },
 ];
+
 let config = {
     title: 'Český překlad DnD 5e SRD',
     description: 'Český překlad DnD 5e SRD',
+    googleAnalyticsId: googleAnalyticsId,
     navbar: [
         {
             text: 'Knihy',
@@ -164,7 +185,7 @@ let config = {
             tools.sharedTemplateOSrd(),
         ],
         '/jeskyne-a-draci/': [
-            tools.expandBook('Jeskyne a draci', 'jeskyne-a-draci', [
+            tools.expandBook('Jeskyne a draci - Základní kniha', 'jeskyne-a-draci', [
                 '0-uvod',
                 '1-zaklady',
                 '2-tvorba-postavy',
@@ -179,6 +200,11 @@ let config = {
                 '11-kouzelne-predmety',
                 '12-protivnici-a-netvori',
                 '13-stavy-a-nemoci',
+            ]),
+            tools.sharedTemplateOSrd(),
+        ],
+        '/jeskyne-a-draci-doplnky/': [
+            tools.expandBook('Jeskyne a draci - Doplňky', 'jeskyne-a-draci-doplnky', [
                 'hvezdne-obory',
             ]),
             tools.sharedTemplateOSrd(),

@@ -29,7 +29,7 @@ build-fatesrd: ## build fatesrd
 	docker-compose run --rm --entrypoint "yarn srd:build" fatesrd
 
 build-dnd5esrd: ## build dnd5esrd
-	docker-compose run --rm --entrypoint "yarn srd:build" dnd5esrd
+	docker-compose run --rm --entrypoint "yarn srd:build" -e ENABLE_GOOGLE_ANALYTICS_ID=1 dnd5esrd
 
 build-awsrd: ## build awsrd
 	docker-compose run --rm --entrypoint "yarn srd:build" awsrd
