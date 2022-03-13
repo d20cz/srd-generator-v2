@@ -1,6 +1,6 @@
 const tools = require('./tools');
 
-const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-YYYYYYYYYY' : '';
+const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-BY6H51G6BT' : '';
 
 let books = [
     {

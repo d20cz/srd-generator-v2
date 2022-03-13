@@ -55,9 +55,9 @@ pack-drd2srd: ## Pack drd2srd
 pack-srd: ## Pack srd
 	docker-compose run --rm pack srd
 
-build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd ## build all
+build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd build-srd ## build all
 
-pack: pack-fatesrd pack-dnd5esrd pack-awsrd pack-drd2srd ## pack all
+pack: pack-fatesrd pack-dnd5esrd pack-awsrd pack-drd2srd pack-srd ## pack all
 
 help:
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
