@@ -41,19 +41,19 @@ build-srd: ## build srd
 	docker-compose run --rm --entrypoint "yarn srd:build" srd
 
 pack-dnd5esrd: ## Pack dnd5esrd
-	docker-compose run --rm pack dnd5esrd
+	docker-compose run --rm pack dnd5esrd DEPLOY_VERSION_DND5ESRD
 
 pack-fatesrd: ## Pack fatesrd
-	docker-compose run --rm pack fatesrd
+	docker-compose run --rm pack fatesrd DEPLOY_VERSION_FATESRD
 
 pack-awsrd: ## Pack awsrd
-	docker-compose run --rm pack awsrd
+	docker-compose run --rm pack awsrd DEPLOY_VERSION_AWSRD
 
 pack-drd2srd: ## Pack drd2srd
-	docker-compose run --rm pack drd2srd
+	docker-compose run --rm pack drd2srd DEPLOY_VERSION_DRD2SRD
 
 pack-srd: ## Pack srd
-	docker-compose run --rm pack srd
+	docker-compose run --rm pack srd DEPLOY_VERSION_SRD
 
 build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd build-srd ## build all
 
