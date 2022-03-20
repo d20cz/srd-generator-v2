@@ -5,3 +5,4 @@ builds/*
 vuepress2_template/.vuepress/.cache
 vuepress2_template/.vuepress/.temp
 .idea
+.env

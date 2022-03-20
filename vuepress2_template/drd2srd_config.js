@@ -1,6 +1,6 @@
 const tools = require('./tools');
 
-const googleAnalyticsId = (process.env.ENABLE_GOOGLE_ANALYTICS_ID  === '1') ? 'G-2E3WCNGJVG' : '';
+const googleAnalyticsId = (process.env.ENABLE_GA  === '1') ? process.env.GAID_DRD2SRD : '';
 
 let config = {
     title: 'DrDII SRD',

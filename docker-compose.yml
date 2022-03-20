@@ -26,6 +26,8 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    env_file:
+      - .env
     entrypoint: [ 'yarn' , 'srd:dev']
 
   dnd5esrd:
@@ -53,6 +55,8 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    env_file:
+      - .env
     entrypoint: [ 'yarn' , 'srd:dev']
 
   awsrd:
@@ -74,6 +78,8 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    env_file:
+      - .env
     entrypoint: [ 'yarn' , 'srd:dev']
 
   drd2srd:
@@ -95,6 +101,8 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    env_file:
+      - .env
     entrypoint: [ 'yarn' , 'srd:dev']
 
   srd:
@@ -116,6 +124,8 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    env_file:
+      - .env
     entrypoint: [ 'yarn' , 'srd:dev']
 
   preparedata:
