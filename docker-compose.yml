@@ -11,7 +11,6 @@ services:
       - ./yarn.lock:/var/www/html/yarn.lock
       - ./node_modules:/var/www/html/node_modules
       - ./source/fatesrd/README.md:/var/www/html/srd/README.md
-      - ./source/fatesrd/dfa:/var/www/html/srd/dfa
       - ./source/fatesrd/fae:/var/www/html/srd/fae
       - ./source/fatesrd/fate-core-system:/var/www/html/srd/fate-core-system
       - ./source/fatesrd/fate-prevodni-prirucka:/var/www/html/srd/fate-prevodni-prirucka

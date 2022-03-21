@@ -42,27 +42,6 @@ let config = {
         tools.sharedTemplateD20cz(),
     ],
     sidebar: {
-        '/dfa/': [
-            tools.expandBook('Dresden Files Zrychleně', 'dfa', [
-                'faktura',
-                'predmluva',
-                '1-frakce',
-                '2-mista',
-                '3-svet',
-                '4-tvorba-hry',
-                '5-postava',
-                '6-pravidla',
-                '7-aspekty',
-                '8-plaste',
-                '9-ritualni-magie',
-                '10-konflikty',
-                '11-vyvoj',
-                '12-vedeni-hry',
-                '13-ukazkova-kampan',
-                'rejstrik-herni-pomucky',
-            ]),
-            tools.sharedTemplateOSrd(),
-        ],
         '/fate-core-system/': [
             tools.expandBook('Fate základní pravidla', 'fate-core-system', [
                 '1-zaklady',
