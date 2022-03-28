@@ -122,8 +122,8 @@ let sumaryClasses = [
 ];
 
 let config = {
-    title: 'Český překlad DnD 5e SRD',
-    description: 'Český překlad DnD 5e SRD',
+    title: 'SRD JaD a překladu DnD 5e',
+    description: 'SRD JaD a překladu DnD 5e',
     googleAnalyticsId: googleAnalyticsId,
     navbar: [
         {
