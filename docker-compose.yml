@@ -51,6 +51,7 @@ services:
       - ./vuepress2_template/dnd5esrd_config.js:/var/www/html/srd/.vuepress/srd_config.js
       - ./vuepress2_template/dnd5esrd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
       - ./builds/dnd5esrd/public:/var/www/html/srd/.vuepress/dist
+      - ./source/dnd5esrd/xanathar:/var/www/html/srd/xanathar
     ports:
       - "8080:8080"
       - "8081:8081"

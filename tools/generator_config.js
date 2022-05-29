@@ -105,6 +105,15 @@ let mergeFiles = [
         ],
         target: './source/dnd5esrd/jeskyne-a-draci/10-magie.md'
     },
+    {
+        files: [
+            './source/dnd5esrd/xanathar/kapitola-2a.md',
+            './source/dnd5esrd/xanathar/kapitola-2b-pasti.md',
+            './source/dnd5esrd/xanathar/kapitola-2c-mezidobi.md',
+            './source/dnd5esrd/xanathar/kapitola-2d-kouzelne_predmety.md',
+        ],
+        target: './source/dnd5esrd/xanathar/kapitola-2.md'
+    },
 ];
 
 module.exports = {

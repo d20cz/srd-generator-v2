@@ -21,6 +21,11 @@ let books = [
                 link: '/bestiar/uvod',
                 activeMatch: '/bestiar/',
             },
+            {
+                text: 'Xanatharův průvodce vším (rozpracované)',
+                link: '/xanathar/kapitola-2',
+                activeMatch: '/xanathar/',
+            },
         ],
     },
     {
@@ -368,6 +373,14 @@ let config = {
                 'dodate-a',
                 'dodatek-b',
                 'dodatek-c',
+            ]),
+            tools.sharedTemplateOSrd(),
+        ],
+        '/xanathar/': [
+            tools.expandBook('Xanatharův průvodce vším (rozpracované)', 'xanathar', [
+                'kapitola-2',
+                'kapitola-3-kouzla',
+                'dodatek-A-sdilene_kampane',
             ]),
             tools.sharedTemplateOSrd(),
         ],
