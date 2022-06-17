@@ -65,6 +65,11 @@ let grimoars = [
 ];
 let sumaryClasses = [
     {
+        text: 'Alchymista',
+        link: '/soupis/alchymista',
+        activeMatch: '/soupis/alchymista',
+    },
+    {
         text: 'Barbar',
         link: '/soupis/barbar',
         activeMatch: '/soupis/barbar',
@@ -108,6 +113,11 @@ let sumaryClasses = [
         text: 'Kouzelník',
         link: '/soupis/kouzelnik',
         activeMatch: '/soupis/kouzelnik',
+    },
+    {
+        text: 'Lovec netvorů',
+        link: '/soupis/lovec-netvoru',
+        activeMatch: '/soupis/lovec-netvoru',
     },
     {
         text: 'Mnich',
@@ -442,6 +452,14 @@ let config = {
         ],
         '/soupis/tulak': [
             '/soupis/tulak',
+            tools.sharedTemplateOSrd(),
+        ],
+        '/soupis/alchymista': [
+            '/soupis/alchymista',
+            tools.sharedTemplateOSrd(),
+        ],
+        '/soupis/lovec-netvoru': [
+            '/soupis/lovec-netvoru',
             tools.sharedTemplateOSrd(),
         ],
         '/': [

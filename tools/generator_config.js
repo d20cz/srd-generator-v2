@@ -56,6 +56,8 @@ let replaceSnippets = [
             'mnich.md',
             'paladin.md',
             'tulak.md',
+            'alchymista.md',
+            'lovec-netvoru.md',
         ],
     },
 ];
