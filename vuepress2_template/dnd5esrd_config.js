@@ -391,6 +391,7 @@ let config = {
                 'kapitola-2',
                 'kapitola-3-kouzla',
                 'dodatek-A-sdilene_kampane',
+                'dodatek-B-jmena',
             ]),
             tools.sharedTemplateOSrd(),
         ],
