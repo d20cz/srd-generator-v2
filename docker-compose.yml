@@ -52,6 +52,7 @@ services:
       - ./vuepress2_template/dnd5esrd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
       - ./builds/dnd5esrd/public:/var/www/html/srd/.vuepress/dist
       - ./source/dnd5esrd/xanathar:/var/www/html/srd/xanathar
+      - ./source/dnd5esrd/voluv-pruvodce-netvory:/var/www/html/srd/voluv-pruvodce-netvory
     ports:
       - "8080:8080"
       - "8081:8081"

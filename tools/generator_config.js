@@ -27,6 +27,16 @@ let replaceSnippets = [
     },
     {
         applySnippets: [
+            {snippet: snippets.kouzla, prefix: 'kouzla', headerOffset: 4},
+        ],
+        templateDir: './source/dnd5esrd/templates',
+        targetDir: './source/dnd5esrd/grimoar',
+        fileNames: [
+            'grimoar-povolani.md',
+        ],
+    },
+    {
+        applySnippets: [
             {snippet: snippets.kouzla, prefix: 'kouzla', headerOffset: 3},
         ],
         templateDir: './source/dnd5esrd/templates',
@@ -106,15 +116,6 @@ let mergeFiles = [
             './source/dnd5esrd/jeskyne-a-draci/10d-magie-kouzla-4-9.md',
         ],
         target: './source/dnd5esrd/jeskyne-a-draci/10-magie.md'
-    },
-    {
-        files: [
-            './source/dnd5esrd/xanathar/kapitola-2a.md',
-            './source/dnd5esrd/xanathar/kapitola-2b-pasti.md',
-            './source/dnd5esrd/xanathar/kapitola-2c-mezidobi.md',
-            './source/dnd5esrd/xanathar/kapitola-2d-kouzelne_predmety.md',
-        ],
-        target: './source/dnd5esrd/xanathar/kapitola-2.md'
     },
 ];
 
