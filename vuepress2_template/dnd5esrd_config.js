@@ -22,7 +22,7 @@ let books = [
                 activeMatch: '/bestiar/',
             },
             {
-                text: 'Xanatharův průvodce vším (rozpracované)',
+                text: 'Xanatharův průvodce vším',
                 link: '/xanathar/Uvod',
                 activeMatch: '/xanathar/',
             },
@@ -397,7 +397,7 @@ let config = {
             tools.sharedTemplateOSrd(),
         ],
         '/xanathar/': [
-            tools.expandBook('Xanatharův průvodce vším (rozpracované)', 'xanathar', [
+            tools.expandBook('Xanatharův průvodce vším', 'xanathar', [
                 'Uvod',
                 '1-kapitola',
                 '2-kapitola',
