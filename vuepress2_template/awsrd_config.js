@@ -16,7 +16,7 @@ let config = {
     navbar: [
         {
             text: 'Knihy',
-            children: books
+            children: tools.linksAddHtml(books)
         },
         tools.sharedTemplateDalsiSrd('awsrd'),
         tools.sharedTemplateD20cz(),
@@ -55,7 +55,7 @@ let config = {
         '/': [
             {
                 text: 'Knihy',
-                children: books
+                children: tools.linksAddHtml(books)
             },
             tools.sharedTemplateOSrd(),
         ]

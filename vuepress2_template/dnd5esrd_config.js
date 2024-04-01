@@ -153,15 +153,15 @@ let config = {
     navbar: [
         {
             text: 'Knihy',
-            children: books
+            children: tools.linksAddHtml(books)
         },
         {
             text: 'Grimoary',
-            children: grimoars
+            children: tools.linksAddHtml(grimoars)
         },
         {
             text: 'Soupisy povolání',
-            children: sumaryClasses
+            children: tools.linksAddHtml(sumaryClasses)
         },
         tools.sharedTemplateDalsiSrd('dnd5esrd'),
         tools.sharedTemplateD20cz(),
@@ -544,15 +544,15 @@ let config = {
         '/': [
             {
                 text: 'Knihy',
-                children: books
+                children: tools.linksAddHtml(books)
             },
             {
                 text: 'Grimoary',
-                children: grimoars
+                children: tools.linksAddHtml(grimoars)
             },
             {
                 text: 'Soupisy povolání',
-                children: sumaryClasses
+                children: tools.linksAddHtml(sumaryClasses)
             },
             tools.sharedTemplateOSrd(),
         ]

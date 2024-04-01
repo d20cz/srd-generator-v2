@@ -10,6 +10,23 @@ module.exports = {
             children: this.expandBookPages(dirName, files)
         }
     },
+    linksAddHtml: function (books) {
+        return  books.map(s => {
+            let link = null;
+            if (s.link !== undefined ){
+                link = s.link + ".html"
+            }
+            let children = null;
+            if (s.children !== undefined ){
+                children = this.linksAddHtml(s.children)
+            }
+            return {
+                ...s,
+                link: link,
+                children: children,
+            };
+        })
+    },
     sharedTemplateOSrd: function () {
         return {
             text: 'O SRD',
