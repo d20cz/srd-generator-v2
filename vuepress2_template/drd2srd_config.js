@@ -62,6 +62,18 @@ let config = {
                     },
                 ]
             },
+            {
+                text: 'Bestiář',
+                collapsable: true,
+                children: [
+                    '/bestiar/01-uvod.md',
+                    '/bestiar/02-lide.md',
+                    '/bestiar/03-zvirata.md',
+                    '/bestiar/04-nemrtvi.md',
+                    '/bestiar/05-besi.md',
+                    '/bestiar/06-netvori.md'
+                ]
+            },
             tools.sharedTemplateOSrd(),
         ]
     }

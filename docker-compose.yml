@@ -94,6 +94,7 @@ services:
       - ./node_modules:/var/www/html/node_modules
       - ./source/drd2srd/README.md:/var/www/html/srd/README.md
       - ./source/drd2srd/zakladni-prirucka:/var/www/html/srd/zakladni-prirucka
+      - ./source/drd2srd/bestiar:/var/www/html/srd/bestiar
       - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
       - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
       - ./vuepress2_template/drd2srd_config.js:/var/www/html/srd/.vuepress/srd_config.js

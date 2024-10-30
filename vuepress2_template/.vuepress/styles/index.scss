@@ -13,6 +13,19 @@
     padding-left: 0.15rem;
 }
 
+@font-face {
+    font-family: 'drd2_glyphsregular';
+    src: url('/fonts/DrD2_Glyphs.woff2') format('woff2'),
+    url('/fonts/DrD2_Glyphs.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.drd2-font {
+    font-family: 'drd2_glyphsregular'
+}
+
 //table td:first-of-type {
 //    white-space: nowrap;
 //}
