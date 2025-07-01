@@ -163,3 +163,12 @@ services:
     volumes:
       - .:/var/www/html
     entrypoint: ['yarn']
+
+  u_cache_clear:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - .:/var/www/html
+    entrypoint: ['sh', '-c', 'rm -rf vuepress2_template/.vuepress/.temp vuepress2_template/.vuepress/.cache']

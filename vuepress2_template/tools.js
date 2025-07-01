@@ -16,7 +16,7 @@ module.exports = {
             if (s.link !== undefined ){
                 link = s.link + ".html"
             }
-            let children = null;
+            let children = undefined;
             if (s.children !== undefined ){
                 children = this.linksAddHtml(s.children)
             }

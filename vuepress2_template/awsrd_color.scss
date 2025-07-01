@@ -1,6 +1,7 @@
 :root {
-    --c-brand: #007231;
-    --c-brand-light: #46a970;
+    --vp-c-accent: #007231;
+    --vp-c-accent-bg: #46a970;
+    --vp-c-accent-hover: #46a970;
 
     --card-bg-color: rgba(0, 0, 0, 0.02);
     --card-border-color: #007231;
@@ -9,9 +10,10 @@
     --card-green-border-color: #77e047;
 }
 
-html.dark {
-    --c-brand: #007231;
-    --c-brand-light: #00d25e;
+[data-theme='dark'] {
+    --vp-c-accent: #007231;
+    --vp-c-accent-bg: #00d25e;
+    --vp-c-accent-hover: #00d25e;
 
     --card-bg-color: rgba(0, 0, 0, 0.2);
     --card-border-color: #007231;

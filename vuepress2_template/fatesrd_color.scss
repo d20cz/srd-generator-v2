@@ -1,6 +1,7 @@
 :root {
-    --c-brand: #1b75bc;
-    --c-brand-light: #a6daff;
+    --vp-c-accent: #1b75bc;
+    --vp-c-accent-bg: #a6daff;
+    --vp-c-accent-hover: #a6daff;
 
     --card-bg-color: rgba(0, 0, 0, 0.02);
     --card-border-color: #a6daff;
@@ -9,9 +10,10 @@
     --card-green-border-color: #77e047;
 }
 
-html.dark {
-    --c-brand: #3a9bde;
-    --c-brand-light: #99cef1;
+[data-theme='dark'] {
+    --vp-c-accent: #3a9bde;
+    --vp-c-accent-bg: #99cef1;
+    --vp-c-accent-hover: #99cef1;
 
     --card-bg-color: rgba(0, 0, 0, 0.2);
     --card-border-color: #3a9bde;

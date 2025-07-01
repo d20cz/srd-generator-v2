@@ -10,19 +10,19 @@ sync: ## Stažení dat z google drive
 prepare-source: ## očištění a přenos dat
 	docker-compose run --rm  preparedata
 
-dev-fatesrd: ## dev server fatesrd
+dev-fatesrd: cache-clear  ## dev server fatesrd
 	docker-compose up fatesrd
 
-dev-dnd5esrd: ## dev server dnd5esrd
+dev-dnd5esrd: cache-clear ## dev server dnd5esrd
 	docker-compose up dnd5esrd
 
-dev-awsrd: ## dev server awsrd
+dev-awsrd: cache-clear ## dev server awsrd
 	docker-compose up awsrd
 
-dev-drd2srd: ## dev server drd2srd
+dev-drd2srd: cache-clear ## dev server drd2srd
 	docker-compose up drd2srd
 
-dev-srd: ## dev server srd
+dev-srd: cache-clear ## dev server srd
 	docker-compose up srd
 
 build-fatesrd: ## build fatesrd
@@ -68,3 +68,7 @@ help:
 init-dir: ## Inicializace adresáře
 	mkdir -p source_raw
 	mkdir -p builds
+
+
+cache-clear:
+	docker-compose run --rm u_cache_clear
