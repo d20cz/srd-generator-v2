@@ -128,6 +128,31 @@ services:
       - .env
     entrypoint: [ 'yarn' , 'srd:dev']
 
+  sr6srd:
+    image: srd-node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./package.json:/var/www/html/package.json
+      - ./yarn.lock:/var/www/html/yarn.lock
+      - ./node_modules:/var/www/html/node_modules
+      - ./source/sr6srd/README.md:/var/www/html/srd/README.md
+      - ./source/sr6srd/zakladni-pravidla:/var/www/html/srd/zakladni-pravidla
+      - ./source/sr6srd/neo-anarch:/var/www/html/srd/neo-anarch
+      - ./source/sr6srd/img:/var/www/html/srd/img
+      - ./vuepress2_template/.vuepress:/var/www/html/srd/.vuepress
+      - ./vuepress2_template/tools.js:/var/www/html/srd/.vuepress/tools.js
+      - ./vuepress2_template/sr6srd_config.js:/var/www/html/srd/.vuepress/srd_config.js
+      - ./vuepress2_template/sr6srd_color.scss:/var/www/html/srd/.vuepress/styles/srdcolor.scss
+      - ./builds/sr6srd/public:/var/www/html/srd/.vuepress/dist
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    env_file:
+      - .env
+    entrypoint: [ 'yarn' , 'srd:dev' ]
+
   preparedata:
     image: srd-node
     build:

@@ -65,6 +65,10 @@ module.exports = {
             text: 'DrDII',
             link: 'http://drd2srd.d20.cz',
         };
+        let sr6srd = {
+            text: 'Shadowrun 6e',
+            link: 'http://sr6srd.d20.cz',
+        };
         let children = [];
         if (actualSrd !== 'fatesrd') {
             children.push(fatesrd)
@@ -77,6 +81,9 @@ module.exports = {
         }
         if (actualSrd !== 'drd2srd') {
             children.push(drd2srd)
+        }
+        if (actualSrd !== 'sr6srd') {
+            children.push(sr6srd)
         }
         return {
             text: 'Další SRD',

@@ -1,0 +1,29 @@
+:root {
+  --vp-c-accent: #97168f;
+  --vp-c-accent-bg: #b364ab;
+  --vp-c-accent-hover: #b364ab;
+
+    --card-bg-color: rgba(0, 0, 0, 0.02);
+    --card-border-color: #93358D;
+    --card-red-border-color: #ff8282;
+    --card-blue-border-color: #0686d9;
+    --card-green-border-color: #77e047;
+}
+
+[data-theme='dark'] {
+    --vp-c-accent: #b364ab;
+    --vp-c-accent-bg: #93358D;
+    --vp-c-accent-hover: #b364ab;
+
+    --card-bg-color: rgba(0, 0, 0, 0.2);
+    --card-border-color: #93358D;
+
+    --card-red-border-color: #d24949;
+    --card-blue-border-color: #2690c7;
+    --card-green-border-color: #4b8f2f;
+}
+
+.search-box {
+    --search-input-width: 14rem;
+    --search-result-width: 30rem;
+}

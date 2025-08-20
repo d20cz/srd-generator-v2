@@ -1,3 +1,5 @@
+include .env
+
 # defaultní přílaz
 .DEFAULT_GOAL := help
 
@@ -25,6 +27,9 @@ dev-drd2srd: cache-clear ## dev server drd2srd
 dev-srd: cache-clear ## dev server srd
 	docker-compose up srd
 
+dev-sr6srd: cache-clear ## dev server srd
+	docker-compose up sr6srd
+
 build-fatesrd: ## build fatesrd
 	docker-compose run --rm --entrypoint "yarn srd:build" fatesrd
 
@@ -39,6 +44,9 @@ build-drd2srd: ## build drd2srd
 
 build-srd: ## build srd
 	docker-compose run --rm --entrypoint "yarn srd:build" srd
+
+build-sr6srd: ## build srd
+	docker-compose run --rm --entrypoint "yarn srd:build" sr6srd
 
 pack-dnd5esrd: ## Pack dnd5esrd
 	docker-compose run --rm pack dnd5esrd DEPLOY_VERSION_DND5ESRD
@@ -55,9 +63,12 @@ pack-drd2srd: ## Pack drd2srd
 pack-srd: ## Pack srd
 	docker-compose run --rm pack srd DEPLOY_VERSION_SRD
 
-build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd build-srd ## build all
+pack-sr6srd: ## Pack srd
+	docker-compose run --rm pack sr6srd DEPLOY_VERSION_SR6SRD
 
-pack: pack-fatesrd pack-dnd5esrd pack-awsrd pack-drd2srd pack-srd ## pack all
+build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd build-srd build-sr6srd ## build all
+
+pack: pack-fatesrd pack-dnd5esrd pack-awsrd pack-drd2srd pack-srd pack-sr6srd ## pack all
 
 down:
 	docker-compose down
@@ -69,6 +80,8 @@ init-dir: ## Inicializace adresáře
 	mkdir -p source_raw
 	mkdir -p builds
 
-
 cache-clear:
 	docker-compose run --rm u_cache_clear
+
+upload-sr6srd: ## upload dev live
+	rclone copy builds/sr6srd-${DEPLOY_VERSION_SR6SRD}.zip deployment-d20-cz: --progress
