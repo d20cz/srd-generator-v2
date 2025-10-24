@@ -27,7 +27,7 @@ dev-drd2srd: cache-clear ## dev server drd2srd
 dev-srd: cache-clear ## dev server srd
 	docker-compose up srd
 
-dev-sr6srd: cache-clear ## dev server srd
+dev-sr6srd: cache-clear ## dev server sr6srd
 	docker-compose up sr6srd
 
 build-fatesrd: ## build fatesrd
@@ -45,7 +45,7 @@ build-drd2srd: ## build drd2srd
 build-srd: ## build srd
 	docker-compose run --rm --entrypoint "yarn srd:build" srd
 
-build-sr6srd: ## build srd
+build-sr6srd: ## build sr6srd
 	docker-compose run --rm --entrypoint "yarn srd:build" sr6srd
 
 pack-dnd5esrd: ## Pack dnd5esrd
@@ -63,7 +63,7 @@ pack-drd2srd: ## Pack drd2srd
 pack-srd: ## Pack srd
 	docker-compose run --rm pack srd DEPLOY_VERSION_SRD
 
-pack-sr6srd: ## Pack srd
+pack-sr6srd: ## Pack sr6srd
 	docker-compose run --rm pack sr6srd DEPLOY_VERSION_SR6SRD
 
 build: build-fatesrd build-dnd5esrd build-awsrd build-drd2srd build-srd build-sr6srd ## build all
@@ -83,5 +83,22 @@ init-dir: ## Inicializace adresáře
 cache-clear:
 	docker-compose run --rm u_cache_clear
 
-upload-sr6srd: ## upload dev live
+upload-dnd5esrd: ## upload live dnd5esrd
+	rclone copy builds/dnd5esrd-${DEPLOY_VERSION_DND5ESRD}.zip deployment-d20-cz: --progress
+
+upload-fatesrd: ## upload live fatesrd
+	rclone copy builds/fatesrd-${DEPLOY_VERSION_FATESRD}.zip deployment-d20-cz: --progress
+
+upload-awsrd: ## upload live awsrd
+	rclone copy builds/awsrd-${DEPLOY_VERSION_AWSRD}.zip deployment-d20-cz: --progress
+
+upload-drd2srd: ## upload live drd2srd
+	rclone copy builds/drd2srd-${DEPLOY_VERSION_DRD2SRD}.zip deployment-d20-cz: --progress
+
+upload-srd: ## upload live srd
+	rclone copy builds/srd-${DEPLOY_VERSION_SRD}.zip deployment-d20-cz: --progress
+
+upload-sr6srd: ## upload live sr6srd
 	rclone copy builds/sr6srd-${DEPLOY_VERSION_SR6SRD}.zip deployment-d20-cz: --progress
+
+upload: upload-dnd5esrd upload-fatesrd upload-awsrd upload-drd2srd upload-srd upload-sr6srd ## upload live all

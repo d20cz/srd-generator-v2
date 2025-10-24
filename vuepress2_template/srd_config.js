@@ -27,6 +27,10 @@ let config = {
                     text: 'DrDII',
                     link: 'http://drd2srd.d20.cz',
                 },
+                {
+                    text: 'Shadowrun 6e',
+                    link: 'http://sr6srd.d20.cz',
+                },
             ]
         },
         {
@@ -67,6 +71,10 @@ let config = {
                     {
                         text: 'DrDII',
                         link: 'http://drd2srd.d20.cz',
+                    },
+                    {
+                        text: 'Shadowrun 6e',
+                        link: 'http://sr6srd.d20.cz',
                     },
                 ]
             },
