@@ -1,6 +1,7 @@
 services:
   fatesrd:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -29,6 +30,7 @@ services:
 
   dnd5esrd:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -60,6 +62,7 @@ services:
 
   awsrd:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -83,6 +86,7 @@ services:
 
   drd2srd:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -107,6 +111,7 @@ services:
 
   srd:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -130,6 +135,7 @@ services:
 
   sr6srd:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -155,6 +161,7 @@ services:
 
   preparedata:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -170,6 +177,7 @@ services:
 
   pack:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -182,6 +190,7 @@ services:
 
   u_yarn:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -191,6 +200,7 @@ services:
 
   u_cache_clear:
     image: srd-node
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     build:
       context: .
       dockerfile: docker/node/Dockerfile
