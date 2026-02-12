@@ -4,7 +4,7 @@
 
 1. nakloujte repositář
 2. vytvořte env soubor `cp .env.default .env`
-3. stáhnětě přes yarn potřebné balíčky proo geneerování  `docker-compose run --rm u_yarn install`
+3. stáhnětě přes yarn potřebné balíčky proo geneerování  `docker compose run --rm u_yarn install`
 
 ## Generování 
 
